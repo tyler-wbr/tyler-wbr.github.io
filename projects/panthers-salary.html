@@ -2,129 +2,174 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Carolina Panthers Salary Distribution Analysis</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <h1>Carolina Panthers Salary Distribution Analysis</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <div class="dropdown">
+      <a href="#">Projects ▾</a>
+      <div class="dropdown-content">
+        <a href="panthers-salary.html">Carolina Panthers Salary Analysis</a>
+        <a href="offball-linebacker-analysis.html">Off-Ball Linebacker Evolution</a>
+      </div>
+    </div>
+  </nav>
 
-  <h2>Introduction</h2>
-  <p>
-    To prevent large-market, high-valued NFL teams from acquiring the best players by offering them the highest salaries,
-    each team must operate under a strict salary cap. This is the maximum limit of money each NFL team can spend on its players,
-    determined by the NFL every year in order to promote a competitive balance throughout the league. 
-    The problem this project addresses is understanding how the Carolina Panthers distribute their salary cap spending
-    in comparison to the rest of the league.
-  </p>
+  <header>
+    <h1>Carolina Panthers Salary Distribution Analysis</h1>
+  </header>
 
-  <p><strong>Key questions include:</strong></p>
-  <ul>
-    <li>Which positions are the Panthers investing in most heavily?</li>
-    <li>Are spending priorities aligned with league trends?</li>
-    <li>Does their distribution suggest strengths or weaknesses in roster construction?</li>
-  </ul>
+  <section class="content-block">
+    <h2>Introduction</h2>
+    <p>
+      To prevent large-market, high-valued NFL teams from acquiring the best players by offering them the highest salaries,
+      each team must operate under a strict salary cap. This is the maximum limit of money each NFL team can spend on its players,
+      determined by the NFL every year in order to promote a competitive balance throughout the league. 
+      The problem this project addresses is understanding how the Carolina Panthers distribute their salary cap spending
+      in comparison to the rest of the league.
+    </p>
 
-  <h2>The Data</h2>
-  <p>
-    My data comes from OverTheCap, accessed through the <code>nflreadr</code> R package. 
-    It contains contract details for every NFL player, both active and inactive. 
-    There are 25 columns containing different attributes, but we primarily utilize player names, position, team, and APY (average per year salary).
-  </p>
+    <p><strong>Key questions include:</strong></p>
+    <ul>
+      <li>Which positions are the Panthers investing in most heavily?</li>
+      <li>Are spending priorities aligned with league trends?</li>
+      <li>Does their distribution suggest strengths or weaknesses in roster construction?</li>
+    </ul>
+  </section>
 
-  <h2>Pre-Processing the Data</h2>
-  <ul>
-    <li>Filtered out inactive contracts → ensures only active contracts are analyzed.</li>
-  </ul>
-  <img src="images/image3.png" alt="Code example">
+  <section class="content-block">
+    <h2>The Data</h2>
+    <p>
+      My data comes from OverTheCap, accessed through the nflreadr< R package. 
+      It contains contract details for every NFL player, both active and inactive. 
+      There are 25 columns containing different attributes, but we primarily utilize player names, position, team, and APY (average per year salary).
+    </p>
+  </section>
 
-  <ul>
-    <li>Created a database for only Panthers players.</li>
-  </ul>
-  <img src="images/image8.png" alt="Code example">
+  <section class="content-block">
+    <h2>Pre-Processing the Data</h2>
+    <ul>
+      <li>Filtered out inactive contracts → ensures only active contracts are analyzed.</li>
+    </ul>
+    <figure>
+      <img src="images/image3.png" alt="Code example">
+    </figure>
 
-  <ul>
-    <li>Grouped salaries by position and team → total APY spending calculated.</li>
-  </ul>
-  <img src="images/image7.png" alt="Code example">
-  <img src="images/image4.png" alt="Code example">
+    <ul>
+      <li>Created a database for only Panthers players.</li>
+    </ul>
+    <figure>
+      <img src="images/image8.png" alt="Code example">
+    </figure>
 
-  <ul>
-    <li>Assigned unique colors to each position → allows for consistency in charts.</li>
-  </ul>
-  <img src="images/image2.png" alt="Code example">
+    <ul>
+      <li>Grouped salaries by position and team → total APY spending calculated.</li>
+    </ul>
+    <figure>
+      <img src="images/image7.png" alt="Code example">
+    </figure>
+    <figure>
+      <img src="images/image4.png" alt="Code example">
+    </figure>
 
-  <p>
-    We now have two separate databases, one for the NFL as a whole and the other for only the Panthers. 
-    These databases sum APY at each position. They both only contain active contracts.
-  </p>
+    <ul>
+      <li>Assigned unique colors to each position → allows for consistency in charts.</li>
+    </ul>
+    <figure>
+      <img src="images/image2.png" alt="Code example">
+    </figure>
 
-  <h2>Data Understanding & Visualization</h2>
-  <p>
-    To explore the data, I created:
-  </p>
-  <ul>
-    <li>Grouped bar chart comparing average salary by position for the Panthers vs. the league average</li>
-  </ul>
-  <img src="images/image1.png" alt="Grouped bar chart comparing Panthers vs NFL average salary by position">
-  <ul>
-    <li>A pie chart to see the percentage of total spending across positions</li>
-  </ul>
-  <img src="images/image5.png" alt="NFL salary distribution across positions (pie chart)">
-  <img src="images/image6.png" alt="Carolina Panthers salary distribution across positions (pie chart)">
+    <p>
+      We now have two separate databases, one for the NFL as a whole and the other for only the Panthers. 
+      These databases sum APY at each position. They both only contain active contracts.
+    </p>
+  </section>
 
-  <h3>First impressions / Findings:</h3>
+  <section class="content-block">
+    <h2>Data Understanding & Visualization</h2>
+    <ul>
+      <li>Grouped bar chart comparing average salary by position for the Panthers vs. the league average</li>
+    </ul>
+    <figure>
+      <img src="images/image1.png" alt="Grouped bar chart comparing Panthers vs NFL average salary by position">
+      <figcaption>Grouped bar chart comparing Panthers vs NFL average salary by position</figcaption>
+    </figure>
 
-  <h4>Center (C) anomaly</h4>
-  <p>
-    Data shows $0 allocated to center.  
-    Reality: Starting center Austin Corbett is listed as RG, inflating guard spending.
-  </p>
+    <ul>
+      <li>A pie chart to see the percentage of total spending across positions</li>
+    </ul>
+    <figure>
+      <img src="images/image5.png" alt="NFL salary distribution across positions (pie chart)">
+      <figcaption>NFL salary distribution across positions</figcaption>
+    </figure>
+    <figure>
+      <img src="images/image6.png" alt="Carolina Panthers salary distribution across positions (pie chart)">
+      <figcaption>Carolina Panthers salary distribution across positions</figcaption>
+    </figure>
+  </section>
 
-  <h4>Interior Defensive Line (IDL) over-investment</h4>
-  <p>
-    Panthers’ IDL spending is nearly double the league average.  
-    Driven by Derrick Brown’s $24M APY contract (4th highest at his position) 
-    plus other contracts (Wharton, Brown III, Robinson) totaling another $29M.
-  </p>
+  <section class="content-block">
+    <h3>First impressions / Findings:</h3>
 
-  <h4>Linebacker (LB) under-investment</h4>
-  <p>
-    LB spending is well below league average.  
-    The Panthers ranked last in run defense last season.
-  </p>
+    <h4>Center (C) anomaly</h4>
+    <p>
+      Data shows $0 allocated to center.  
+      Reality: Starting center Austin Corbett is listed as RG, inflating guard spending.
+    </p>
 
-  <h4>Quarterback (QB) low spending</h4>
-  <p>
-    QB spending is significantly lower than the league average.  
-    Explained by Bryce Young’s rookie contract (cheap relative to veteran QBs).
-  </p>
+    <h4>Interior Defensive Line (IDL) over-investment</h4>
+    <p>
+      Panthers’ IDL spending is nearly double the league average.  
+      Driven by Derrick Brown’s $24M APY contract (4th highest at his position) 
+      plus other contracts (Wharton, Brown III, Robinson) totaling another $29M.
+    </p>
 
-  <h4>Wide Receiver (WR) shortage</h4>
-  <p>
-    Panthers spend far below league average at WR.  
-    Mirrors weak production at the position.  
-    While rookie 8th overall pick Tetairoa McMillan offers potential, the roster lacks a proven WR1.
-  </p>
+    <h4>Linebacker (LB) under-investment</h4>
+    <p>
+      LB spending is well below league average.  
+      The Panthers ranked last in run defense last season.
+    </p>
 
-  <h2>Impact</h2>
-  <p>
-    This data clearly displays discrepancies in how the Panthers are allocating their money. 
-    It shows potential roster balancing issues, such as concentration on IDL and neglect of LB. 
-    It also highlights comparisons to league averages, suggesting what they may need to invest in more strategically.  
-  </p>
-  <p>
-    However, salary allocation doesn’t always correlate to performance. 
-    A young star player may still be on a rookie contract, meaning he isn’t paid like a top player yet. 
-    Thus, the relationship between money and production must be interpreted cautiously.
-  </p>
+    <h4>Quarterback (QB) low spending</h4>
+    <p>
+      QB spending is significantly lower than the league average.  
+      Explained by Bryce Young’s rookie contract (cheap relative to veteran QBs).
+    </p>
 
-  <h2>References</h2>
-  <ul>
-    <li><a href="https://nflreadr.nflverse.com">nflreadr R package</a></li>
-    <li><a href="https://overthecap.com">OverTheCap</a></li>
-    <li>GitHub Repository: <a href="https://github.com/tyler-wbr/Carolina-Panthers-Salary-Distribution-Analysis">Carolina Panthers Salary Distribution Analysis</a></li>
-  </ul>
+    <h4>Wide Receiver (WR) shortage</h4>
+    <p>
+      Panthers spend far below league average at WR.  
+      Mirrors weak production at the position.  
+      While rookie 8th overall pick Tetairoa McMillan offers potential, the roster lacks a proven WR1.
+    </p>
+  </section>
+
+  <section class="content-block">
+    <h2>Impact</h2>
+    <p>
+      This data clearly displays discrepancies in how the Panthers are allocating their money. 
+      It shows potential roster balancing issues, such as concentration on IDL and neglect of LB. 
+      It also highlights comparisons to league averages, suggesting what they may need to invest in more strategically.  
+    </p>
+    <p>
+      However, salary allocation doesn’t always correlate to performance. 
+      A young star player may still be on a rookie contract, meaning he isn’t paid like a top player yet. 
+      Thus, the relationship between money and production must be interpreted cautiously.
+    </p>
+  </section>
+
+  <section class="content-block">
+    <h2>References</h2>
+    <ul>
+      <li><a href="https://nflreadr.nflverse.com">nflreadr R package</a></li>
+      <li><a href="https://overthecap.com">OverTheCap</a></li>
+      <li>GitHub Repository: <a href="https://github.com/tyler-wbr/Carolina-Panthers-Salary-Distribution-Analysis">Carolina Panthers Salary Distribution Analysis</a></li>
+    </ul>
+  </section>
 
   <footer>
     <p>&copy; 2025 NFL Analysis Project</p>

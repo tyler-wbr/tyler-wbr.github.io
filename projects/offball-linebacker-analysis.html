@@ -2,60 +2,67 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>The Evolution of Linebackers Since 1999</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+  <nav>
+    <a href="index.html">Home</a>
+    <div class="dropdown">
+      <a href="#">Projects ▾</a>
+      <div class="dropdown-content">
+        <a href="panthers-salary.html">Carolina Panthers Salary Analysis</a>
+        <a href="offball-linebacker-analysis.html">Off-Ball Linebacker Evolution</a>
+      </div>
+    </div>
+  </nav>
+
   <header>
     <h1>How Off-Ball Linebackers Have Evolved Since 1999</h1>
-    <p>
-      Over the past two decades, the role of off-ball linebackers in the NFL has shifted. 
-      How have different statistics shifted over time, and who has dominated the most at the position?
-    </p>
   </header>
 
-  <section>
+  <section class="content-block">
     <h2>Introduction</h2>
     <p>
       Linebackers have long been the centerpiece of NFL defenses, responsible for stopping runs, 
       pressuring quarterbacks, and covering the middle of the field. But over the past 20+ years, 
-      their role has changed. With the league becoming faster and more pass-oriented, 
-      linebackers are asked to do more than just rack up tackles. They must adapt, 
-      cover multiple positions, and make game-changing plays.
+      their role has slightly changed. With the league becoming faster and more pass-oriented, 
+      linebackers are asked to move side-line to side-line while having run stopping and pass covering ability. 
     </p>
     <p>
       This project explores the evolution of off-ball linebackers since 1999. 
-      By analyzing trends in defensive stats and impact scores, we can understand what it takes 
-      to stand out in today’s NFL.
+      By analyzing trends in defensive stats and impact scores, we can take a look at how the position has changed.
     </p>
     <p>
       Guiding question: <strong>How has the role of off-ball linebackers evolved over time, 
       and what factors define a high-impact player today?</strong>
     </p>
+
     <h2>Data Overview</h2>
     <p>
       This analysis focuses on off-ball linebackers from 1999 to 2023, using key stats like solo tackles, sacks, 
-      and interceptions. We’ll explore trends over time and highlight the most impactful players.
+      and interceptions. We’ll explore trends over time and also highlight the most impactful players.
     </p>
   </section>
 
-  <section>
+  <section class="content-block">
     <h2>Tackling Trends</h2>
     <p>
-      Linebackers have always been the heart of defensive production. Looking at average solo tackles per season, 
-      we see that overall numbers are steady, but the way linebackers contribute has changed.
+      Looking at average solo tackles per season, we see that overall numbers are steady.
     </p>
     <p class="insight">
       Insight: Solo tackles are relatively stable throughout the years, being anywhere from 43 to 52. 
       This slight difference doesn't indicate any major differences in play.
     </p>
-    <img src="images/solo_tackles.png" alt="Solo tackles over time">
-    <em>Figure 1: Solo tackles by starting off-ball linebackers, 1999–2023</em>
+    <figure>
+      <img src="images/solo_tackles.png" alt="Solo tackles over time">
+      <figcaption>Figure 1: Solo tackles by starting off-ball linebackers, 1999–2023</figcaption>
+    </figure>
   </section>
 
-  <section>
+  <section class="content-block">
     <h2>Sacks & Interceptions: Changing Styles</h2>
     <p>
       By tracking average sacks and interceptions, patterns emerge. 
@@ -66,14 +73,16 @@
       and complex blitz packages involving linebackers. Quarterbacks are throwing less and less interceptions every year, 
       likely contributing to the linebackers’ decrease in interceptions.
     </p>
-    <img src="images/impact_plays.png" alt="Linebacker impact plays over time">
-    <em>Figure 2: Average sacks and interceptions per season for starting off-ball linebackers</em>
+    <figure>
+      <img src="images/impact_plays.png" alt="Linebacker impact plays over time">
+      <figcaption>Figure 2: Average sacks and interceptions per season for starting off-ball linebackers</figcaption>
+    </figure>
   </section>
 
-  <section>
+  <section class="content-block">
     <h2>Measuring Impact: Career vs Seasonal Averages</h2>
     <p>
-      Some linebackers shine consistently over long careers, while others peak in rather short spans. 
+      Some linebackers perform consistently over long careers, while others peak in rather short spans. 
       To compare, we can look at total career impact versus average per-season performance.
     </p>
     <p>
@@ -81,33 +90,36 @@
       and sacks in order to rank players.
     </p>
     <p class="insight">
-      Insight: High-impact seasons can make a player memorable, but sustained performance over many years is what builds a legacy.
+      Insight: High-impact seasons can make a player memorable, while sustained performance over many years indicates a lasting legacy.
     </p>
-    <img src="images/impact_score_total.png" alt="Top 12 linebackers by career totals">
-    <em>Figure 3: Top 12 linebackers by career totals</em>
-    <img src="images/impact_score_avg.png" alt="Top 12 linebackers by season averages">
-    <em>Figure 4: Top 12 linebackers by season averages</em>
+    <figure>
+      <img src="images/impact_score_total.png" alt="Top 12 linebackers by career totals">
+      <figcaption>Figure 3: Top 12 linebackers by career totals</figcaption>
+    </figure>
+    <figure>
+      <img src="images/impact_score_avg.png" alt="Top 12 linebackers by season averages">
+      <figcaption>Figure 4: Top 12 linebackers by season averages</figcaption>
+    </figure>
   </section>
 
-  <section>
+  <section class="content-block">
     <h2>What This Means</h2>
     <ul>
       <li><strong>Quarterback Improvements:</strong> Despite becoming a more pass-heavy league, linebackers are getting less and less interceptions, pointing towards improved quarterback play and decision-making.</li>
       <li><strong>Position Flexibility:</strong> Linebackers are getting faster and covering more ground, adapting to the evolving demands of their roles. We see this with a slight increase in sacks over the years.</li>
-      <li><strong>Career Totals Don’t Tell the Whole Story:</strong> While career totals provide a snapshot, they often overlook a player's per-season performance and impact in key moments. A player like Luke Kuechly, while he doesn’t appear in the career total leaderboard, is widely regarded as the best linebacker of this time, and the season average impact scores reflect that.</li>
+      <li><strong>Career Totals Don’t Tell the Whole Story:</strong> While career totals provide a snapshot, they often overlook a player's per-season performance. A prime example of this is a player like Luke Kuechly. While he doesn’t appear in the career total leaderboard, he is widely regarded as the best linebacker of this time, and the season average impact scores reflect that as he ranks #1.</li>
     </ul>
     <p class="insight">
       Insight: Modern linebackers succeed by being versatile and recording high impact plays like interceptions and fumbles that are crucial to their impact.
     </p>
   </section>
 
-  <section>
+  <section class="content-block">
     <h2>Key Takeaways</h2>
     <ul>
-      <li><strong>Linebackers remain tackling leaders:</strong> While solo tackles are relatively stable, how and where linebackers make those tackles has changed due to evolving defensive schemes.</li>
-      <li><strong>Versatility is essential:</strong> Modern linebackers must cover receivers, defend the run, and occasionally blitz. The position rewards adaptability more than ever before.</li>
+      <li><strong>Versatility is essential:</strong> Modern linebackers must cover receivers, defend the run, and occasionally blitz. Seeing how the numbers change over the next decade will be interesting.</li>
       <li><strong>High-impact plays:</strong> Interceptions, forced fumbles, and sacks highlight game-changing moments that elevate a player.</li>
-      <li><strong>Peak performance matters:</strong> Career totals are important, but standout seasons can cement a player’s reputation. Both consistency and peak performance shape a linebacker’s overall career impact.</li>
+      <li><strong>Peak performance matters:</strong> Career totals are important, but standout seasons can solidify a player’s reputation. Both consistency and peak performance shape a linebacker’s overall career impact.</li>
     </ul>
   </section>
 

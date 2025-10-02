@@ -1,78 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Tyler Weber - Portfolio</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: #f4f4f4;
-            color: #333;
-        }
-        .container {
-            max-width: 700px;
-            margin: 40px auto;
-            background: #fff;
-            padding: 32px;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            text-align: center;
-        }
-        .profile-pic {
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
-            margin-bottom: 24px;
-            border: 3px solid #FF5F1F;
-        }
-        h1 {
-            margin-bottom: 16px;
-            font-size: 2.2em;
-            color: #FF5F1F;
-        }
-        .about-me {
-            font-size: 1.1em;
-            margin-top: 24px;
-            line-height: 1.6;
-        }
-        .project-button {
-            display: inline-block;
-            margin-top: 30px;
-            padding: 12px 24px;
-            font-size: 1.1em;
-            font-weight: bold;
-            color: white;
-            background-color: #FF5F1F;
-            border: none;
-            border-radius: 6px;
-            text-decoration: none;
-            transition: background 0.3s ease;
-        }
-        .project-button:hover {
-            background-color: #e14e12;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tyler Weber - Portfolio</title>
+  <link rel="stylesheet" href="projects/style.css">
 </head>
 <body>
-    <div class="container">
-        <img src="tw.png" alt="Tyler Weber" class="profile-pic">
-        <h1>Tyler Weber</h1>
-        <div class="about-me">
-            <h2>About Me</h2>
-            <p>
-                Hi there! My name is Tyler Weber. I'm a third year computer science student at UNC Charlotte with a concentration in data science. In my free time, I love anything sports related, especially watching and keeping up with football and a bit of college basketball as well.
-                I do lots of fun activites with my friends and girlfriend, such as rafting, riding fourwheelers, and playing various sports like pickleball, basketball, and tennis. In the future, I hope to work in the data science field, where I can apply my skills and passion for technology and analysis to solve real-world problems! 
-            </p>
-        </div>
-        <a href="projects/panthers-salary.html" class="project-button">
-            Carolina Panthers Salary Distribution Analysis
-        </a>
-        <a href="projects/offball-linebacker-analysis.html" class="project-button" style="margin-left: 12px;">
-            Off-Ball Linebacker Analysis
-        </a>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <div class="dropdown">
+      <a href="#">Projects ▾</a>
+      <div class="dropdown-content">
+        <a href="panthers-salary.html">Carolina Panthers Salary Analysis</a>
+        <a href="offball-linebacker-analysis.html">Off-Ball Linebacker Evolution</a>
+      </div>
     </div>
+  </nav>
+
+  <header>
+    <img src="tw.png" alt="Tyler Weber" class="profile-pic">
+    <h1>Tyler Weber</h1>
+  </header>
+
+  <section class="content-block">
+    <div class="about-me">
+      <h2>About Me</h2>
+      <p>
+        Hi there! My name is Tyler Weber. I'm a third-year computer science student at UNC Charlotte 
+        with a concentration in data science. In my free time, I love anything sports related, especially 
+        football and some college basketball. I enjoy fun activities with friends and my girlfriend, like rafting, 
+        riding four-wheelers, and playing sports like pickleball, basketball, and tennis. In the future, I hope 
+        to work in the data science field, applying my skills and passion to solve real-world problems!
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Tyler Weber Portfolio</p>
+  </footer>
+
 </body>
 </html>
