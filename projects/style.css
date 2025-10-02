@@ -153,11 +153,13 @@ figcaption {
 .profile-pic {
   width: 180px;
   height: 180px;
-  object-fit: cover; 
+  object-fit: cover;
+  object-position: 50% 25%; /* shift the focus upward */
   border: 4px solid #0085CA;
   margin-bottom: 20px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
+
 
 /* Footer */
 footer {
