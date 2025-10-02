@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Madden NFL Position Classification</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav>
+    <a href="../index.html">Home</a>
+    <div class="dropdown">
+      <a href="#">Projects ▾</a>
+      <div class="dropdown-content">
+        <a href="panthers-salary.html">Carolina Panthers Salary Analysis</a>
+        <a href="offball-linebacker-analysis.html">Off-Ball Linebacker Evolution</a>
+        <a href="madden-position-classification.html">Madden NFL Position Classification</a>
+      </div>
+    </div>
+  </nav>
+
+  <header>
+    <h1>Madden NFL Position Classification</h1>
+  </header>
+
+  <section class="content-block">
+    <h2>Introduction</h2>
+    <p>
+      For this project I wanted to see if I could train a machine learning model to predict a player’s 
+      NFL position group based only on Madden ratings and physical attributes. The target was the player’s 
+      grouped position (like QB, WR, OL, LB, etc.). 
+    </p>
+    <p>
+      If the model works, it should tell us which features really define each position.
+    </p>
+  </section>
+
+  <section class="content-block">
+    <h2>The Data</h2>
+    <p>
+      The dataset comes from Madden player exports. It includes things like height, weight, and age, 
+      along with a ton of skill ratings (blocking, coverage, tackling, route running, etc.). 
+      Each player has a known position group, which I used as the target for classification.
+    </p>
+    <p>
+      My assumption going in was that position dominant traits would dominate, but I was also 
+      curious to see how physical attributes, like weight, would impact the model’s ability to distinguish between positions.
+    </p>
+  </section>
+
+  <section class="content-block">
+    <h2>Pre-processing</h2>
+    <p>
+      Preprocessing was kept relatively simple:
+    </p>
+    <ul>
+    <li><strong>Feature selection:</strong> I used player ratings (blocking, coverage, tackling, etc.) along with basic physical traits like height and weight as predictors.</li>
+    <li><strong>Target variable:</strong> The target was <code>pos_grouped</code>, which combines similar positions into broader categories like OL, WR, LB, etc.</li>
+    <li><strong>Stratified split:</strong> Since some positions (like OL, CB, WR) are much more common than others (like FB, LS), I used a stratified 80/20 train/test split. This made sure every class was represented fairly in both sets.</li>
+    </ul>
+  </section>
+
+  <section class="content-block">
+    <h2>Exploratory Analysis</h2>
+    <p>
+      Looking at the class distribution, it was obvious some positions had way more samples than others. 
+      Offensive linemen, corners, and receivers were abundant. Fullbacks and long snappers were minimal. 
+      That imbalance was something I figured would show up later in the results.
+    </p>
+  </section>
+
+  <section class="content-block">
+    <h2>Modeling</h2>
+    <p>
+      I thought about a few different models, but Random Forest ended up making the most sense. Random Forest gave me great performance, it was fast, and I could easily 
+      pull out feature importances to see what the model cared about.
+    </p>
+    <p>
+      Random Forest felt like the most football-friendly choice. It is accurate enough to be useful and 
+      interpretable enough to tell a story.
+    </p>
+  </section>
+
+  <section class="content-block">
+    <h2>Evaluation</h2>
+    <p>
+      I didn’t just want to know the overall accuracy, I was curious to know how the model did for 
+      every position. That’s why I created macro-F1 and confusion matrices 
+      along with accuracy. 
+    </p>
+    <ul>
+      <li><strong>Cross-val accuracy:</strong> 0.947 ± 0.004</li>
+      <li><strong>Cross-val macro-F1:</strong> 0.919 ± 0.014</li>
+      <li><strong>Test Accuracy:</strong> 0.95</li>
+      <li><strong>Test Macro avg F1:</strong> 0.91</li>
+      <li><strong>Test Weighted avg F1:</strong> 0.94</li>
+    </ul>
+
+    <figure>
+      <img src="images/confusion_matrix_counts.png" alt="Confusion Matrix (counts)">
+      <p>
+        The confusion matrix shows some interesting insights. OL, WR, and QB were 
+        almost perfect. Safeties and corners got mixed up sometimes, which makes sense since they 
+        share a lot of attributes. Fullback was the toughest, as the model only got a few right, and 
+        often confused them with tight ends or running backs.
+      </p>
+    </figure>
+
+    <figure>
+      <img src="images/confusion_matrix_normalized.png" alt="Confusion Matrix (normalized)">
+      <p>
+        The normalized view makes it clearer: OL, QB, WR, and HB were nearly flawless. FB was way 
+        down at 43% recall, showing how hard it is to classify rare roles when you don’t have 
+        many examples to learn from.
+      </p>
+    </figure>
+
+    <figure>
+      <img src="images/feature_importances.png" alt="Top 20 Feature Importances">
+      <p>
+        Feature importances kinda surprised me in the fact that weight dominated everything, but also makes sense
+        with how linemen and skill players split. Blocking ratings came next (separating OL, TE, 
+        FB), followed by coverage ratings (separating DBs and LBs).
+      </p>
+    </figure>
+  </section>
+
+  <section class="content-block">
+    <h2>Insights & Storytelling</h2>
+    <p>
+      While I predicted the modle will perform well, seeing the results helps confirm my predictions and thoughts.
+    </p>
+    <ul>
+      <li>Weight alone splits the big guys (OL/DL) from the rest.</li>
+      <li>Blocking ratings pick out OL, TE, and FB.</li>
+      <li>Coverage and tackling separate defensive backs from linebackers.</li>
+      <li>Minority positions (FB, LS) are always going to be tough with so little data.</li>
+    </ul>
+    <p>
+      So not only did the model perform really well overall, it also confirmed that the 
+      underlying Madden ratings make sense in reflecting real football roles. At the same time, 
+      it highlighted that rare positions are a real challenge for classification.
+    </p>
+  </section>
+
+  <section class="content-block">
+    <h2>Impact</h2>
+    <p>
+      A model like this could have a few applications: helping automate roster data, scouting tools, 
+      or even making Madden player generation smarter. But it also has risks. If you lean too heavily 
+      on a model like this, it could reinforce stereotypes about what “should” define a position and 
+      overlook players who are considered the "prototypes" at their positions. 
+    </p>
+  </section>
+
+<footer> 
+  <p> 
+    Tools used: Python (pandas, numpy, scikit-learn, matplotlib, seaborn)<br>
+    Data: <a href="https://mymadden.com/lg/mva26/export">MyMadden Export</a><br>
+    GitHub Repository: <a href="https://github.com/tyler-wbr/Classifying-NFL-Player-Positions-Using-Madden-Ratings">Madden NFL Player Classification</a> 
+  </p> </footer>
+
+</body>
+</html>
