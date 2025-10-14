@@ -149,12 +149,11 @@ figcaption {
   font-size: 0.95rem;
 }
 
-/* Profile picture (homepage) */
 .profile-pic {
   width: 180px;
   height: 180px;
   object-fit: cover;
-  object-position: 50% 25%; /* shift the focus upward */
+  object-position: 50% 25%; 
   border: 4px solid #0085CA;
   margin-bottom: 20px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.15);
@@ -178,7 +177,7 @@ footer a {
 
 footer p {
   margin: 0;
-  text-align: center; /* Make sure <p> inside footer is centered */
+  text-align: center; 
 }
 
 
