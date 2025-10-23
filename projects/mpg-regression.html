@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Predicting MPG with Regression</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav>
+    <a href="../index.html">Home</a>
+    <div class="dropdown">
+      <a href="#">Projects ▾</a>
+      <div class="dropdown-content">
+        <a href="panthers-salary.html">Carolina Panthers Salary Analysis</a>
+        <a href="offball-linebacker-analysis.html">Off-Ball Linebacker Evolution</a>
+        <a href="madden-position-classification.html">Madden NFL Position Classification</a>
+        <a href="data-science-job-listing-dashboard.html">Data Science Job Listings Dashboard</a>
+        <a href="mpg-regression.html">Predicting MPG with Regression</a>
+      </div>
+    </div>
+  </nav>
+
+  <header>
+    <h1>Predicting MPG with Regression</h1>
+  </header>
+
+  <section class="content-block">
+    <h2>Introduction</h2>
+    <p>
+      For this project I wanted to explore whether I could predict a car's fuel efficiency, measured in 
+      miles per gallon (MPG), using the <strong>Auto MPG dataset</strong> from Kaggle. The dataset includes 
+      features like cylinders, displacement, horsepower, weight, acceleration, model year, and origin. 
+      The goal was to build regression models that can reasonably estimate MPG based on these features.
+    </p>
+    <p>
+      My main objective was hands-on experience with regression and pre-processing. I treated it as an 
+      experiment to see which combinations of features and models would yield the most accurate predictions.
+    </p>
+  </section>
+
+  <section class="content-block">
+    <h2>The Data</h2>
+    <p>
+      The dataset contains 398 cars from the 1970s and 1980s with mixed numeric and categorical features. 
+      Some values, like horsepower, were missing, which required a bit of cleaning. Each car also has a 
+      model year and origin, giving hints about its design and efficiency.
+    </p>
+    <figure>
+      <img src="images/reg0.png" alt="Sample Data Overview">
+      <p>
+        A snapshot of the data shows numeric features like weight and horsepower, as well as categorical 
+        information like origin.
+      </p>
+    </figure>
+  </section>
+
+  <section class="content-block">
+    <h2>Regression Overview</h2>
+    <p>
+      Regression is about finding relationships between a target variable and predictors. In this case, 
+      MPG is assumed to depend on features like weight, horsepower, and cylinders. Linear regression is 
+      the most straightforward approach: it fits a line (or hyperplane) that best represents the relationship.
+    </p>
+    <p>
+      Mathematically, the model tries to learn coefficients β that minimize the sum of squared errors (SSE):
+      <br>
+      <code>SSE = Σ (yᵢ - ŷᵢ)²</code>
+      <br>
+      where yᵢ is the actual MPG and ŷᵢ is the predicted MPG. The model finds the best β values to make 
+      predictions as close to reality as possible.
+    </p>
+    <p>
+      Later, more complex or regularized 
+      models can be tried to see if performance improves.
+    </p>
+  </section>
+
+  <section class="content-block">
+    <h2>Experiment 1: Pre-processing & Modeling</h2>
+    <p>
+      Preprocessing was minimal and included:
+    </p>
+    <ul>
+      <li>Filled missing horsepower values with the median.</li>
+      <li>Kept numeric features like cylinders, displacement, horsepower, weight, acceleration, model year, and origin.</li>
+      <li>Converted the 'origin' categorical feature into dummy variables.</li>
+    </ul>
+
+    <p>
+      I trained a simple linear regression model using these features. This baseline gave an RMSE of 
+      approximately <strong>3.83</strong> and R² ≈ <strong>0.73</strong>, indicating the model explains a 
+      decent portion of the variance in MPG.
+    </p>
+    <figure>
+      <img src="images/reg1.png" alt="Exploratory Scatter Plot">
+    </figure>
+  </section>
+
+  <section class="content-block">
+    <h2>Experiment 2: Polynomial Regression</h2>
+    <p>
+      In the second experiment, I wanted to capture possible non-linear relationships. For example, 
+      the effect of weight on MPG might not be purely linear. I created polynomial features of degree 2 
+      for numeric variables and retrained the model.
+    </p>
+    <p>
+      The RMSE dropped to <strong>3.59</strong> with R² ≈ <strong>0.79</strong>, a noticeable improvement 
+      over the linear model.
+    </p>
+    <figure>
+      <img src="images/reg2.png" alt="Polynomial Regression Predictions">
+      <p>
+        Predicted vs actual MPG shows that polynomial regression fits the data more closely, especially for 
+        cars with extreme weights or horsepower.
+      </p>
+    </figure>
+  </section>
+
+  <section class="content-block">
+    <h2>Experiment 3: Ridge Regression</h2>
+    <p>
+      For the final experiment, I applied Ridge regression. Since several features are correlated (e.g., 
+      weight, displacement, and horsepower), Ridge helps by shrinking coefficients to reduce overfitting 
+      and improve stability.
+    </p>
+    <p>
+      The RMSE for Ridge came out to <strong>4.45</strong> with R² ≈ <strong>0.60</strong>. While the 
+      error is slightly higher than polynomial regression, the model is less sensitive to unusual cars 
+      and provides more consistent predictions.
+    </p>
+  </section>
+
+  <section class="content-block">
+    <h2>Conclusion & Impact</h2>
+    <p>
+      Comparing the three models, polynomial regression achieved the lowest RMSE and highest R², showing 
+      that non-linear relationships are important in MPG prediction. Linear regression provided a simple 
+      baseline, while Ridge offered a more stable alternative when feature correlations were present.
+    </p>
+    <figure>
+      <img src="images/reg4.png" alt="RMSE and R² Comparison Across Models">
+      <p>
+        RMSE and R² comparisons summarize the model performances. Polynomial regression clearly improves 
+        fit, but Ridge provides stability in scenarios where new or extreme data may appear.
+      </p>
+    </figure>
+    <p>
+      Predicting MPG has real-world implications. Car manufacturers, consumers, and environmental agencies 
+      can all benefit from understanding what affects fuel efficiency. At the same time, models are only 
+      approximations, and considering this dataset comes from 1970-1980 vehicles, it's certainly not applicable to use today.
+    </p>
+  </section>
+
+  <section class="content-block">
+    <h2>References & Code</h2>
+    <ul>
+      <li><a href="https://www.kaggle.com/datasets/uciml/autompg-dataset">Auto MPG Dataset - Kaggle</a></li>
+      <li><a href="https://scikit-learn.org/stable/modules/linear_model.html#linear-regression">Scikit-Learn Linear Regression Docs</a></li>
+      <li><a href="https://www.geeksforgeeks.org/machine-learning/what-is-regression-line/">GeeksforGeeks: What is Regression Line</a></li>
+      <li>ChatGPT was used to draft the structure of this portfolio document.</li>
+      <li>Project code: <a href="https://github.com/tyler-wbr/predicting-mpg-with-regression">GitHub Repository</a></li>
+    </ul>
+    <p>
+      Full Jupyter notebook includes all experiments, preprocessing, visualizations, and model evaluation.
+    </p>
+  </section>
+
+<footer> 
+  <p> 
+    Tools used: Python (pandas, numpy, scikit-learn, matplotlib, seaborn)<br>
+    Dataset: <a href="https://www.kaggle.com/datasets/uciml/autompg-dataset">Auto MPG Dataset</a><br>
+    GitHub Repository: <a href="https://github.com/tyler-wbr/predicting-mpg-with-regression">Auto MPG Regression</a> 
+  </p> 
