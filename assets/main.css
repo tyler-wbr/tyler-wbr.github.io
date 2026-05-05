@@ -33,8 +33,8 @@ body {
   color: var(--color-text);
   background: var(--color-bg);
   background-image:
-    radial-gradient(ellipse 120% 80% at 50% -40%, rgba(78, 205, 196, 0.12), transparent),
-    radial-gradient(ellipse 60% 50% at 100% 0%, rgba(244, 162, 97, 0.06), transparent);
+    radial-gradient(ellipse 120% 80% at 50% -40%, rgba(0, 133, 202, 0.22), transparent),
+    radial-gradient(ellipse 60% 50% at 100% 0%, rgba(191, 192, 191, 0.06), transparent);
   min-height: 100vh;
 }
 
@@ -84,9 +84,22 @@ a:focus-visible {
   padding: 0 var(--space-lg);
   max-width: var(--max-width-content);
   margin: 0 auto;
-  background: rgba(12, 15, 20, 0.85);
+  background:
+    linear-gradient(180deg, rgba(15, 26, 44, 0.92), rgba(6, 11, 18, 0.78));
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--color-border);
+}
+
+.site-nav::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(0, 133, 202, 0.9), transparent);
+  opacity: 0.75;
+  pointer-events: none;
 }
 
 .site-nav__brand {
@@ -117,6 +130,18 @@ a:focus-visible {
   padding: 0;
 }
 
+.site-nav__brand::before {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 10px;
+  border-radius: 3px;
+  background: var(--color-accent);
+  box-shadow: 0 0 0 4px rgba(0, 133, 202, 0.18);
+  transform: translateY(-1px);
+}
+
 .site-nav__links a {
   color: var(--color-text-muted);
   text-decoration: none;
@@ -127,6 +152,21 @@ a:focus-visible {
 .site-nav__links a:hover,
 .site-nav__links a[aria-current="page"] {
   color: var(--color-text);
+}
+
+.site-nav__links a[aria-current="page"] {
+  position: relative;
+}
+
+.site-nav__links a[aria-current="page"]::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -10px;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
 }
 
 .site-nav__toggle {
@@ -508,6 +548,16 @@ a:focus-visible {
   object-fit: cover;
   object-position: 50% 25%;
   border: 3px solid var(--color-border-strong);
+  box-shadow: var(--shadow-md);
+  margin: 0 auto;
+}
+
+.about-panel__photo {
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-border);
   box-shadow: var(--shadow-md);
   margin: 0 auto;
 }
