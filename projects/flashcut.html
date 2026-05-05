@@ -30,6 +30,11 @@
         </p>
       </section>
 
+      <figure class="content-block">
+        <img src="images/flashcut.png" alt="FlashCut options page showing export actions and backend URL configuration">
+        <figcaption>FlashCut options UI: export tools and backend configuration.</figcaption>
+      </figure>
+
       <section class="content-block">
         <h2>Architecture</h2>
         <p>
@@ -38,7 +43,7 @@
         </p>
         <ul>
           <li>Extension: popup UI, content scripts, keyboard shortcuts, options for backend URL.</li>
-          <li>Server: REST-style API for auth, card CRUD, and AI workflows used by the extension.</li>
+          <li>Server: REST API for authentication, flashcard generation, retrieval, and secure persistence.</li>
         </ul>
       </section>
 
@@ -55,15 +60,18 @@
 
       <section class="content-block">
         <h2>My role</h2>
-        <p>
-          Built as part of a university software development group (<code>4155-Softwere-Dev-Group-1</code>), collaborating on extension UX,
-          API integration, authentication flows, and deployment of the hosted backend for class delivery and demos.
-        </p>
+        <p>Built as part of a 5-person software development team (April 2026).</p>
+        <ul>
+          <li>Developed a full-stack Chrome extension that converts highlighted web content into AI-generated flashcards.</li>
+          <li>Implemented backend functionality using Node.js, Express, and PostgreSQL to validate requests, process AI-generated flashcards, and persist user data.</li>
+          <li>Built REST API endpoints for authentication, flashcard generation, flashcard retrieval, and extension-to-backend communication.</li>
+          <li>Supported a secure, maintainable architecture using JWT-protected routes, password hashing, environment variables, controllers, services, and database models.</li>
+        </ul>
       </section>
 
       <section class="content-block">
         <h2>Tech stack</h2>
-        <p>JavaScript across extension and server, HTML/CSS UI, Node on the backend, Chrome extension APIs, hosted API on Render.</p>
+        <p>JavaScript, Chrome extension APIs, Node.js, Express, PostgreSQL, JWT authentication, hosted API on Render.</p>
       </section>
 
       <footer class="content-block">

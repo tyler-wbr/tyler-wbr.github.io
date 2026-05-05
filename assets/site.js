@@ -127,9 +127,13 @@
       ? '<a href="' + escapeHtml(site.linkedin) + '" rel="noopener noreferrer">LinkedIn</a>'
       : "";
     const social = [gh, li].filter(Boolean).join("");
+    const email = site.email ? '<a href="mailto:' + escapeHtml(site.email) + '">' + escapeHtml(site.email) + "</a>" : "";
+    const phone = site.phone ? '<a href="tel:' + escapeHtml(site.phone) + '">' + escapeHtml(site.phone) + "</a>" : "";
+    const contact = [email, phone].filter(Boolean).join(" · ");
     return (
       '<footer class="site-footer" role="contentinfo">' +
       (social ? '<div class="site-footer__social">' + social + "</div>" : "") +
+      (contact ? '<p style="margin-bottom: 0.5rem;">' + contact + "</p>" : "") +
       "<p>© " +
       year +
       " " +
