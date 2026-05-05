@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FlashCut — Tyler Weber</title>
+  <meta name="description" content="FlashCut: AI-powered flashcards from real reading — Chrome extension and Node server.">
+  <link rel="stylesheet" href="/assets/main.css">
+</head>
+<body>
+  <div id="site-nav"></div>
+
+  <main id="main" class="site-main">
+    <header class="report-hero">
+      <h1>FlashCut</h1>
+      <p class="page-lead">AI-powered flashcards built from what you actually read on the web — a Chrome extension backed by a Node API.</p>
+      <ul class="meta-list" aria-label="Project links">
+        <li><a href="https://github.com/4155-Softwere-Dev-Group-1/FlashCut">GitHub repository</a></li>
+        <li><a href="https://flashcut.onrender.com">Hosted API</a></li>
+      </ul>
+    </header>
+
+    <div class="report-body">
+      <section class="content-block">
+        <h2>Overview</h2>
+        <p>
+          FlashCut helps learners capture vocabulary and ideas in context. Users highlight text on any page;
+          the extension can save short selections as flashcards or use AI to simplify longer passages for quick understanding.
+          Accounts, card storage, and model calls are handled through a dedicated backend so the extension stays focused on the reading experience.
+        </p>
+      </section>
+
+      <section class="content-block">
+        <h2>Architecture</h2>
+        <p>
+          The codebase is split into a <strong>Chrome extension</strong> (<code>extension/</code>) and a <strong>Node server</strong> (<code>server/</code>).
+          The extension talks to a configurable API URL (default <code>https://flashcut.onrender.com</code>); developers can point to a local instance from the options page.
+        </p>
+        <ul>
+          <li>Extension: popup UI, content scripts, keyboard shortcuts, options for backend URL.</li>
+          <li>Server: REST-style API for auth, card CRUD, and AI workflows used by the extension.</li>
+        </ul>
+      </section>
+
+      <section class="content-block">
+        <h2>Key features</h2>
+        <ul>
+          <li><strong>Alt+S</strong> — Save a highlighted word or short phrase (1–3 words) as a flashcard.</li>
+          <li><strong>Alt+G</strong> — Ask AI to simplify a longer selection (2+ words); result is shown for reading help and is not automatically saved as a card.</li>
+          <li><strong>Accounts</strong> — Register and sign in through the extension; cards are tied to the user.</li>
+          <li><strong>Management</strong> — View, edit, delete, and export cards (CSV/JSON) from the options UI.</li>
+          <li><strong>Shortcuts</strong> — Reassignable in <code>chrome://extensions/shortcuts</code> (system pages excluded).</li>
+        </ul>
+      </section>
+
+      <section class="content-block">
+        <h2>My role</h2>
+        <p>
+          Built as part of a university software development group (<code>4155-Softwere-Dev-Group-1</code>), collaborating on extension UX,
+          API integration, authentication flows, and deployment of the hosted backend for class delivery and demos.
+        </p>
+      </section>
+
+      <section class="content-block">
+        <h2>Tech stack</h2>
+        <p>JavaScript across extension and server, HTML/CSS UI, Node on the backend, Chrome extension APIs, hosted API on Render.</p>
+      </section>
+
+      <footer class="content-block">
+        <p>
+          Repository: <a href="https://github.com/4155-Softwere-Dev-Group-1/FlashCut">4155-Softwere-Dev-Group-1/FlashCut</a><br>
+          Release: <a href="https://github.com/4155-Softwere-Dev-Group-1/FlashCut/releases">GitHub Releases</a> (e.g. R1.0.0)
+        </p>
+      </footer>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="/assets/site.js" defer></script>
+</body>
+</html>

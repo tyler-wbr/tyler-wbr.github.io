@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "lint": "htmlhint \"index.html\" \"projects/**/*.html\""
+  },
   "dependencies": {
     "-": "^0.0.1",
     "htmlhint": "^1.7.1"

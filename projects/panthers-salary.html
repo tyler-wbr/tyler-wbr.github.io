@@ -4,28 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Carolina Panthers Salary Distribution Analysis</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="/assets/main.css">
 </head>
 <body>
+  <div id="site-nav"></div>
 
-  <nav>
-    <a href="../index.html">Home</a>
-    <div class="dropdown">
-      <a href="#">Projects ▾</a>
-      <div class="dropdown-content">
-        <a href="panthers-salary.html">Carolina Panthers Salary Analysis</a>
-        <a href="offball-linebacker-analysis.html">Off-Ball Linebacker Evolution</a>
-        <a href="madden-position-classification.html">Madden NFL Position Classification</a>
-        <a href="data-science-job-listing-dashboard.html">Data Science Job Listings Dashboard</a>
-        <a href="mpg-regression.html">Predicting MPG with Regression</a>
-        <a href="data-science-job-listing-update.html">Data Science Job Listings Updated Dashboard</a>
-      </div>
-    </div>
-  </nav>
-
-  <header>
+  <main id="main" class="site-main">
+  <header class="report-hero">
     <h1>Carolina Panthers Salary Distribution Analysis</h1>
   </header>
+  <div class="report-body">
 
   <section class="content-block">
     <h2>Introduction</h2>
@@ -48,7 +36,7 @@
   <section class="content-block">
     <h2>The Data</h2>
     <p>
-      My data comes from OverTheCap, accessed through the nflreadr< R package. 
+      My data comes from OverTheCap, accessed through the nflreadr R package. 
       It contains contract details for every NFL player, both active and inactive. 
       There are 25 columns containing different attributes, but we primarily utilize player names, position, team, and APY (average per year salary).
     </p>
@@ -166,7 +154,7 @@
     </p>
   </section>
 
-  <footer>
+  <footer class="content-block">
     <p>
         Tools used: Python (pandas, matplotlib, seaborn)<br>
         Package: <a href="https://nflreadr.nflverse.com">nflreadr R package</a><br>
@@ -174,6 +162,11 @@
         GitHub Repository: <a href="https://github.com/tyler-wbr/Carolina-Panthers-Salary-Distribution-Analysis">Carolina Panthers Salary Distribution Analysis</a>
     </p>
   </footer>
+
+  </div>
+  </main>
+  <div id="site-footer"></div>
+  <script src="/assets/site.js" defer></script>
 
 </body>
 </html>

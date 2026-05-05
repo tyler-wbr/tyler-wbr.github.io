@@ -3,56 +3,73 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Tyler Weber - Portfolio</title>
-  <link rel="stylesheet" href="projects/style.css">
+  <title>Tyler Weber — Portfolio</title>
+  <meta name="description" content="Computer science and data portfolio: analytics, machine learning, and software projects by Tyler Weber.">
+  <link rel="canonical" href="https://tyler-wbr.github.io/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Tyler Weber — Portfolio">
+  <meta property="og:description" content="Computer science and data portfolio: analytics, machine learning, and software projects.">
+  <meta property="og:url" content="https://tyler-wbr.github.io/">
+  <meta property="og:image" content="https://tyler-wbr.github.io/tw.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Tyler Weber — Portfolio">
+  <meta name="twitter:description" content="Computer science and data portfolio: analytics, machine learning, and software projects.">
+  <meta name="twitter:image" content="https://tyler-wbr.github.io/tw.png">
+  <link rel="icon" type="image/png" href="/tw.png">
+  <link rel="apple-touch-icon" href="/tw.png">
+  <link rel="stylesheet" href="/assets/main.css">
 </head>
 <body>
+  <div id="site-nav"></div>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <div class="dropdown">
-      <a href="#">Projects ▾</a>
-      <div class="dropdown-content">
-        <a href="projects/panthers-salary.html">Carolina Panthers Salary Analysis</a>
-        <a href="projects/offball-linebacker-analysis.html">Off-Ball Linebacker Evolution</a>
-        <a href="projects/madden-position-classification.html">Madden NFL Position Classification</a>
-        <a href="projects/data-science-job-listing-dashboard.html">Data Science Job Listings Dashboard</a>
-        <a href="projects/mpg-regression.html">Predicting MPG with Regression</a>
-        <a href="projects/data-science-job-listing-update.html">Data Science Job Listings Updated Dashboard</a>
-
-      </div>
-    </div>
-  </nav>
-
-  <header>
-    <img src="tw.png" alt="Tyler Weber" class="profile-pic">
-    <h1>Tyler Weber</h1>
-  </header>
-
-  <section class="content-block">
-    <div class="about-me">
-      <h2>About Me</h2>
-      <p>
-        Hi there! My name is Tyler Weber. I'm a third-year computer science student at UNC Charlotte 
-        with a concentration in data science. In my free time, I love watching and keeping up with anything sports related, especially 
-        football and some college basketball. I enjoy various activities with friends and my girlfriend, like rafting, 
-        riding four-wheelers, and playing sports like pickleball, basketball, and tennis. In the future, I hope 
-        to work in the data science field, applying my skills and passion to solve real-world problems!
+  <main id="main" class="site-main">
+    <section class="hero" aria-labelledby="hero-title">
+      <p class="hero__eyebrow">Portfolio</p>
+      <h1 id="hero-title" class="hero__title">Tyler Weber</h1>
+      <p class="hero__lede">
+        Computer science student with a data science focus — I build analyses, models, and tools that make patterns easier to see and act on.
       </p>
-    </div>
-  </section>
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="/projects/images/Resume%2005_25_26%20-%20Tyler%20Weber.pdf" target="_blank" rel="noopener">View resume (PDF)</a>
+        <a class="btn btn--ghost" href="https://github.com/tyler-wbr" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a class="btn btn--ghost" href="https://www.linkedin.com/in/tyler-weber/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </div>
+    </section>
 
-  <section class="content-block">
-    <h2>My Resume</h2>
-    <iframe src="projects/images/Resume 10_8_25 - Tyler Weber.pdf" width="100%" height="600px"></iframe>
-    <p style="text-align: center; margin-top: 10px;">
-      <a href="projects/images/Resume 10_8_25 - Tyler Weber.pdf" target="_blank" class="resume-btn">Download Resume (PDF)</a>
-    </p>
-  </section>
-  
-  <footer>
-    <p>&copy; 2025 Tyler Weber Portfolio</p>
-  </footer>
+    <section class="section-head" aria-labelledby="projects-heading">
+      <h2 id="projects-heading">Selected work</h2>
+      <p>Reports, dashboards, and software — each project links to a full write-up where available.</p>
+    </section>
+    <ul id="project-grid" class="project-grid" aria-label="Project list"></ul>
 
+    <section class="about-panel" aria-labelledby="about-heading">
+      <img src="/tw.png" alt="Portrait of Tyler Weber" width="160" height="160">
+      <div class="about-panel__body">
+        <h2 id="about-heading">About</h2>
+        <p>
+          Hi there! My name is Tyler Weber. I'm a third-year computer science student at UNC Charlotte
+          with a concentration in data science. In my free time, I love watching and keeping up with anything sports related, especially
+          football and some college basketball. I enjoy various activities with friends and my girlfriend, like rafting,
+          riding four-wheelers, and playing sports like pickleball, basketball, and tennis. In the future, I hope
+          to work in the data science field, applying my skills and passion to solve real-world problems!
+        </p>
+      </div>
+    </section>
+
+    <section class="resume-block" aria-labelledby="resume-heading">
+      <h2 id="resume-heading">Resume</h2>
+      <p class="page-lead" style="margin-bottom: var(--space-md);">Embedded below, or open the PDF directly if the preview does not load in your browser.</p>
+      <div class="resume-frame-wrap">
+        <iframe title="Tyler Weber resume PDF" src="/projects/images/Resume%2005_25_26%20-%20Tyler%20Weber.pdf#view=FitH"></iframe>
+      </div>
+      <div class="resume-actions">
+        <a class="btn btn--primary" href="/projects/images/Resume%2005_25_26%20-%20Tyler%20Weber.pdf" download>Download PDF</a>
+        <a class="btn btn--ghost" href="/projects/images/Resume%2005_25_26%20-%20Tyler%20Weber.pdf" target="_blank" rel="noopener">Open in new tab</a>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="/assets/site.js" defer></script>
 </body>
 </html>

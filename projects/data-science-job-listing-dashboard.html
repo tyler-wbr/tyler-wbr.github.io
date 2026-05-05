@@ -4,32 +4,28 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Power BI Dashboard</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="/assets/main.css">
 </head>
 <body>
-  <nav>
-    <a href="../index.html">Home</a>
-    <div class="dropdown">
-      <a href="#">Projects ▾</a>
-      <div class="dropdown-content">
-        <a href="panthers-salary.html">Carolina Panthers Salary Analysis</a>
-        <a href="offball-linebacker-analysis.html">Off-Ball Linebacker Evolution</a>
-        <a href="madden-position-classification.html">Madden NFL Position Classification</a>
-        <a href="data-science-job-listing-dashboard.html">Data Science Job Listings Dashboard</a>
-        <a href="mpg-regression.html">Predicting MPG with Regression</a>
-        <a href="data-science-job-listing-update.html">Data Science Job Listings Updated Dashboard</a>
-      </div>
-    </div>
-  </nav>
-  
-  <header>
+  <div id="site-nav"></div>
+
+  <main id="main" class="site-main">
+  <header class="report-hero">
     <h1>Data Science Job Listing Dashboard</h1>
   </header>
+  <div class="report-body">
 
   <section class="content-block">
     <a href="https://app.powerbi.com/links/Pt9X2fJZMy?ctid=88d59d7d-aecb-41b2-90c5-55595de02536&pbi_source=linkShare">Dashboard Link</a>
     <p>Note: Due to restrictions, only UNC Charlotte accounts can view. A static preview is provided below.</p>
-  </section> 
-  <img src="images/preview.png" alt="Power BI Dashboard Preview" style="max-width:100%; border-radius:8px;">
+  </section>
+  <figure class="content-block">
+    <img src="images/preview.png" alt="Power BI Dashboard Preview">
+  </figure>
+
+  </div>
+  </main>
+  <div id="site-footer"></div>
+  <script src="/assets/site.js" defer></script>
 </body>
 </html>

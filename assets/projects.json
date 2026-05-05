@@ -1,0 +1,68 @@
+{
+  "site": {
+    "name": "Tyler Weber",
+    "tagline": "Computer science & data — turning messy problems into clear insights and solid software.",
+    "github": "https://github.com/tyler-wbr",
+    "linkedin": "https://www.linkedin.com/in/tyler-weber/",
+    "canonicalBase": "https://tyler-wbr.github.io",
+    "ogImage": "/tw.png"
+  },
+  "projects": [
+    {
+      "id": "flashcut",
+      "title": "FlashCut",
+      "href": "/projects/flashcut.html",
+      "summary": "AI-powered Chrome extension that turns highlighted reading into flashcards, with a Node backend and user accounts.",
+      "tags": ["JavaScript", "Chrome Extension", "Node"],
+      "featured": true
+    },
+    {
+      "id": "panthers",
+      "title": "Carolina Panthers Salary Analysis",
+      "href": "/projects/panthers-salary.html",
+      "summary": "NFL salary cap distribution vs league trends using nflreadr and OverTheCap data.",
+      "tags": ["R", "Sports analytics"],
+      "featured": true
+    },
+    {
+      "id": "linebacker",
+      "title": "Off-Ball Linebacker Evolution",
+      "href": "/projects/offball-linebacker-analysis.html",
+      "summary": "How linebacker usage and production shifted since 1999 with NFLverse data.",
+      "tags": ["R", "NFLverse"],
+      "featured": true
+    },
+    {
+      "id": "madden",
+      "title": "Madden NFL Position Classification",
+      "href": "/projects/madden-position-classification.html",
+      "summary": "ML models predicting position group from Madden ratings and attributes.",
+      "tags": ["Python", "ML"],
+      "featured": true
+    },
+    {
+      "id": "jobs-dash",
+      "title": "Data Science Job Listings Dashboard",
+      "href": "/projects/data-science-job-listing-dashboard.html",
+      "summary": "Power BI dashboard exploring data science job postings.",
+      "tags": ["Power BI"],
+      "featured": true
+    },
+    {
+      "id": "mpg",
+      "title": "Predicting MPG with Regression",
+      "href": "/projects/mpg-regression.html",
+      "summary": "Linear, polynomial, and ridge regression on the classic Auto MPG dataset.",
+      "tags": ["Python", "scikit-learn"],
+      "featured": true
+    },
+    {
+      "id": "jobs-update",
+      "title": "Data Science Job Listings (Updated)",
+      "href": "/projects/data-science-job-listing-update.html",
+      "summary": "Updated Power BI view of data science job market listings.",
+      "tags": ["Power BI"],
+      "featured": true
+    }
+  ]
+}

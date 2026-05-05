@@ -1,0 +1,44 @@
+/* Design tokens — editorial dark theme */
+:root {
+  --color-bg: #0c0f14;
+  --color-bg-elevated: #141a22;
+  --color-bg-card: #1a222e;
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-border-strong: rgba(255, 255, 255, 0.14);
+  --color-text: #e8eaef;
+  --color-text-muted: #9aa3b2;
+  --color-text-subtle: #6b7587;
+  --color-accent: #4ecdc4;
+  --color-accent-dim: rgba(78, 205, 196, 0.15);
+  --color-accent-hover: #6fe0d8;
+  --color-warm: #f4a261;
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-body: "Source Sans 3", system-ui, -apple-system, sans-serif;
+  --font-mono: ui-monospace, "Cascadia Code", monospace;
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4.5rem;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.45);
+  --shadow-glow: 0 0 40px rgba(78, 205, 196, 0.12);
+  --max-width-prose: 42rem;
+  --max-width-content: 72rem;
+  --nav-height: 4rem;
+  --transition-fast: 0.15s ease;
+  --transition-med: 0.25s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --transition-fast: 0.01ms;
+    --transition-med: 0.01ms;
+  }
+}

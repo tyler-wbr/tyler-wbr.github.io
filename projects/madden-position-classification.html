@@ -4,28 +4,16 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Madden NFL Position Classification</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="/assets/main.css">
 </head>
 <body>
+  <div id="site-nav"></div>
 
-  <nav>
-    <a href="../index.html">Home</a>
-    <div class="dropdown">
-      <a href="#">Projects ▾</a>
-      <div class="dropdown-content">
-        <a href="panthers-salary.html">Carolina Panthers Salary Analysis</a>
-        <a href="offball-linebacker-analysis.html">Off-Ball Linebacker Evolution</a>
-        <a href="madden-position-classification.html">Madden NFL Position Classification</a>
-        <a href="data-science-job-listing-dashboard.html">Data Science Job Listings Dashboard</a>
-        <a href="mpg-regression.html">Predicting MPG with Regression</a>
-        <a href="data-science-job-listing-update.html">Data Science Job Listings Updated Dashboard</a>
-      </div>
-    </div>
-  </nav>
-
-  <header>
+  <main id="main" class="site-main">
+  <header class="report-hero">
     <h1>Madden NFL Position Classification</h1>
   </header>
+  <div class="report-body">
 
   <section class="content-block">
     <h2>Introduction</h2>
@@ -157,12 +145,18 @@
     </p>
   </section>
 
-<footer> 
-  <p> 
+<footer class="content-block">
+  <p>
     Tools used: Python (pandas, numpy, scikit-learn, matplotlib, seaborn)<br>
     Data: <a href="https://mymadden.com/lg/mva26/export">MyMadden Export</a><br>
-    GitHub Repository: <a href="https://github.com/tyler-wbr/Classifying-NFL-Player-Positions-Using-Madden-Ratings">Madden NFL Player Classification</a> 
-  </p> </footer>
+    GitHub Repository: <a href="https://github.com/tyler-wbr/Classifying-NFL-Player-Positions-Using-Madden-Ratings">Madden NFL Player Classification</a>
+  </p>
+</footer>
+
+  </div>
+  </main>
+  <div id="site-footer"></div>
+  <script src="/assets/site.js" defer></script>
 
 </body>
 </html>
