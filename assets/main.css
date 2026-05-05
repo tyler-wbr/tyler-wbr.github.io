@@ -72,7 +72,7 @@ a:focus-visible {
   outline-offset: 3px;
 }
 
-/* ——— Site chrome ——— */
+/* Site chrome */
 .site-nav {
   position: sticky;
   top: 0;
@@ -292,14 +292,14 @@ a:focus-visible {
   }
 }
 
-/* ——— Layout ——— */
+/* Layout */
 .site-main {
   max-width: var(--max-width-content);
   margin: 0 auto;
   padding: var(--space-xl) var(--space-lg) var(--space-3xl);
 }
 
-/* ——— Home hero ——— */
+/* Home hero */
 .hero {
   padding: var(--space-3xl) 0 var(--space-2xl);
   text-align: center;
@@ -338,6 +338,18 @@ a:focus-visible {
   flex-wrap: wrap;
   gap: var(--space-md);
   justify-content: center;
+}
+
+.hero__photo {
+  display: block;
+  width: 160px;
+  height: 160px;
+  margin: 0 auto var(--space-lg);
+  border-radius: 999px;
+  object-fit: cover;
+  object-position: 50% 25%;
+  border: 3px solid var(--color-border-strong);
+  box-shadow: var(--shadow-md);
 }
 
 .btn {
@@ -382,7 +394,7 @@ a:focus-visible {
   color: var(--color-accent);
 }
 
-/* ——— Sections ——— */
+/* Sections */
 .section-head {
   margin-bottom: var(--space-xl);
 }
@@ -401,7 +413,7 @@ a:focus-visible {
   max-width: 36rem;
 }
 
-/* ——— Project grid ——— */
+/* Project grid */
 .project-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
@@ -469,7 +481,7 @@ a:focus-visible {
   color: var(--color-accent);
 }
 
-/* ——— About strip ——— */
+/* About */
 .about-panel {
   display: grid;
   grid-template-columns: 1fr;
@@ -515,7 +527,7 @@ a:focus-visible {
   margin-bottom: 0;
 }
 
-/* ——— Resume ——— */
+/* Resume */
 .resume-block {
   margin-top: var(--space-2xl);
   padding: var(--space-xl);
@@ -555,7 +567,7 @@ a:focus-visible {
   justify-content: center;
 }
 
-/* ——— Site footer ——— */
+/* Site footer */
 .site-footer {
   max-width: var(--max-width-content);
   margin: 0 auto;
@@ -582,7 +594,7 @@ a:focus-visible {
   font-size: 0.9375rem;
 }
 
-/* ——— Case study / report pages ——— */
+/* Case study / report pages */
 .report-hero {
   padding: var(--space-2xl) 0 var(--space-xl);
   text-align: center;

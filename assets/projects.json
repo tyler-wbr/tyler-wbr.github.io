@@ -1,7 +1,7 @@
 {
   "site": {
     "name": "Tyler Weber",
-    "tagline": "Computer science & data — turning messy problems into clear insights and solid software.",
+    "tagline": "Computer science and data. Turning messy problems into clear insights and solid software.",
     "github": "https://github.com/tyler-wbr",
     "linkedin": "https://www.linkedin.com/in/tweber13/",
     "email": "tyler.weber059@gmail.com",
@@ -23,7 +23,7 @@
       "title": "Carolina Panthers Salary Analysis",
       "href": "/projects/panthers-salary.html",
       "summary": "NFL salary cap distribution vs league trends using nflreadr and OverTheCap data.",
-      "tags": ["R", "Sports analytics"],
+      "tags": ["Python", "Sports analytics"],
       "featured": true
     },
     {
@@ -31,7 +31,7 @@
       "title": "Off-Ball Linebacker Evolution",
       "href": "/projects/offball-linebacker-analysis.html",
       "summary": "How linebacker usage and production shifted since 1999 with NFLverse data.",
-      "tags": ["R", "NFLverse"],
+      "tags": ["Python", "NFLverse"],
       "featured": true
     },
     {
@@ -40,14 +40,6 @@
       "href": "/projects/madden-position-classification.html",
       "summary": "ML models predicting position group from Madden ratings and attributes.",
       "tags": ["Python", "ML"],
-      "featured": true
-    },
-    {
-      "id": "jobs-dash",
-      "title": "Data Science Job Listings Dashboard",
-      "href": "/projects/data-science-job-listing-dashboard.html",
-      "summary": "Power BI dashboard exploring data science job postings.",
-      "tags": ["Power BI"],
       "featured": true
     },
     {
